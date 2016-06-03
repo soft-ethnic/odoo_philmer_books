@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- VIEWS -->
+        <record model="ir.ui.view" id="philmer_books_imported_ids_form">
+            <field name="name">philmer.book.imported_id.form</field>
+            <field name="model">philmer.book.imported_id</field>
+            <field name="arch" type="xml">
+                <form string="Bibliophilia Imported IDs">
+                    <field name="source"/>
+                    <field name="id_in_source"/>
+                    <field name="philmer_id"/>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="philmer_books_imported_ids_tree">
+            <field name="name">philmer.book.imported_id.tree</field>
+            <field name="model">philmer.book.imported_id</field>
+            <field name="arch" type="xml">
+                <tree string="Bibliophilia Imported IDs">
+                    <field name="source"/>
+                    <field name="id_in_source"/>
+                    <field name="philmer_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- ACTIONS -->
+        <act_window id="philmer_books_imported_ids_action"
+                    name="Bibliophilia Imported IDs"
+                    res_model="philmer.book.imported_id"/>
+
+        <!-- MENUS -->
+        <menuitem id="philmer_books_imported_ids_menu"
+                  name="Bibliophilia Imported IDs"
+                  action="philmer_books_imported_ids_action"
+                  parent="philmer_books.philmer_book_configuration_menu"
+                  sequence="90"/>
+    </data>
+</openerp>

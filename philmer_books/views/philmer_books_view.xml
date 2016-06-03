@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- VIEWS -->
+        <!-- BOOKS -->
+        <record model="ir.ui.view" id="philmer_book_form">
+            <field name="name">philmer.book.form</field>
+            <field name="model">philmer.book</field>
+            <field name="arch" type="xml">
+                <form string="Book or Zine">
+                    <sheet>
+                        <div class="oe_title">
+                            <div class="oe_edit_only"><label for="name"/></div>
+                            <h1><field name="name" default_focus="1" placeholder="Name"/></h1>
+                        </div>
+                        <div colspan="2">
+                            <div class="oe_edit_only"><label for="subname"/></div>
+                            <h2><field name="sub_name" placeholder="Under title"/></h2>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="book_type" colspan="2"/>
+                                <field name="book_format" colspan="2"/>
+                                <field name="category_id"/>
+                            </group>
+                            <group>
+                                <field name="editor"/>
+                                <field name="collection"/>
+                                <field name="parution_date"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="pages"/>
+                                <field name="first_page"/>
+                                <field name="classification"/>
+                            </group>
+                        </group>
+                        <group string="Authors">
+                            <field name="author_ids" nolabel="1"/>
+                        </group>
+                        <label for="tag_ids"/>
+                        <field name="tag_ids" widget="many2many_tags"/>
+                        <group>
+                            <group>
+                                <field name="borrower_id"/>
+                                <field name="borrow_date"/>
+                            </group>
+                        </group>
+                        <field name="parent_id" attrs="{'invisible': [('book_type','not in', ['article','zine_issue'])]}"/>
+                        <fields name="active"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="philmer_author_tree">
+            <field name="name">philmer.book.tree</field>
+            <field name="model">philmer.book</field>
+            <field name="arch" type="xml">
+                <tree string="Books and Zines">
+                    <field name="name"/>
+                    <field name="book_type"/>
+                    <field name="category_id"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- AUTHORS -->
+        <record model="ir.ui.view" id="philmer_author_form">
+            <field name="name">philmer.author.form</field>
+            <field name="model">philmer.author</field>
+            <field name="arch" type="xml">
+                <form string="Author">
+                    <div class="oe_title oe_read_only">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <div class="oe_edit_only">
+                        <h1><field name="last_name"/>
+                        <field name="first_name"/></h1>
+                    </div>
+                    <field name="description" colspan="4"/>
+                    <field name="other_names"/>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="philmer_author_tree">
+            <field name="name">philmer.author.tree</field>
+            <field name="model">philmer.author</field>
+            <field name="arch" type="xml">
+                <tree string="Authors">
+                    <!--<field name="name"/>-->
+                    <field name="last_name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- TAGS -->
+        <record model="ir.ui.view" id="philmer_book_tag_form">
+            <field name="name">philmer.book.tag.form</field>
+            <field name="model">philmer.book.tag</field>
+            <field name="arch" type="xml">
+                <form string="Tag">
+                    <div class="oe_title">
+                        <div class="oe_edit_only"><label for="name"/></div>
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group string="Books">
+                        <field name="book_ids" nolabel="1"/>
+                    </group>
+                    <field name="active"/>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="philmer_author_tree">
+            <field name="name">philmer.author.tree</field>
+            <field name="model">philmer.author</field>
+            <field name="arch" type="xml">
+                <tree string="Tags">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- BOOK CATEGORIES -->
+        <record model="ir.ui.view" id="philmer_book_category_form">
+            <field name="name">philmer.book.category.form</field>
+            <field name="model">philmer.book.category</field>
+            <field name="arch" type="xml">
+                <form string="Category">
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <field name="parent_id"/>
+                    <field name="active"/>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="philmer_book_category_tree">
+            <field name="name">philmer.book.category.tree</field>
+            <field name="model">philmer.book.category</field>
+            <field name="arch" type="xml">
+                <tree string="Categories">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- ACTIONS -->
+        <act_window id="philmer_book_book_action"
+                    name="Books"
+                    res_model="philmer.book"/>
+        <act_window id="philmer_author_action"
+                    name="Authors"
+                    res_model="philmer.author"/>
+        <act_window id="philmer_tag_action"
+                    name="Tags"
+                    res_model="philmer.book.tag"/>
+        <act_window id="philmer_book_category_action"
+                    name="Book's categories"
+                    res_model="philmer.book.category"/>
+
+        <!-- MENUS -->
+        <!-- main menu -->
+        <menuitem id="philmer_book_menu"
+                  name="Books"
+                  sequence="10"/>
+        <!-- menus for main objects : books & authors-->
+        <menuitem id="philmer_book_main_menu"
+                  name="Books, Zines and Authors"
+                  parent="philmer_book_menu"
+                  sequence="10"/>
+        <menuitem id="philmer_book_book_menu"
+                  name="Books and Zines"
+                  action="philmer_book_book_action"
+                  parent="philmer_book_main_menu"
+                  sequence="10"/>
+        <menuitem id="philmer_author_menu"
+                  name="Authors"
+                  action="philmer_author_action"
+                  parent="philmer_book_main_menu"
+                  sequence="20"/>
+        <!-- Menus for configuration menus -->
+        <menuitem id="philmer_book_configuration_menu"
+                  name="Configuration"
+                  parent="philmer_book_menu"
+                  sequence="90"/>
+        <menuitem id="philmer_book_tag_menu"
+                  name="Tags"
+                  action="philmer_tag_action"
+                  parent="philmer_book_configuration_menu"
+                  sequence="10"/>
+        <menuitem id="philmer_book_category_menu"
+                  name="Book's categories"
+                  action="philmer_book_category_action"
+                  parent="philmer_book_configuration_menu"
+                  sequence="20"/>
+    </data>
+</openerp>
