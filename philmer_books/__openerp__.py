@@ -12,6 +12,7 @@ Manage books, magazines etc of the Philmer's family
              'views/res_users.xml',
              'report/menu_report.xml',
              'report/philmer_book_catalog.xml',
+             'wizards/wizard_aggregate_authors.xml',
             ],
     'version':'1.0',
     'application':True,

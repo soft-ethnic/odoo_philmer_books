@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Wizard form -->
+        <record id='aggregate_authors_wizard_main_form' model='ir.ui.view'>
+            <field name='name'>Agggregate Authors</field>
+            <field name='model'>wizard_aggregate_authors</field>
+            <field name='arch' type='xml'> 
+                <form string='Aggregate Authors'>
+                    <sheet>
+                        <group>
+                            <field name='kept_author_id'/>
+                            <field name='aggregated_author_id'/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name='aggregate_authors'
+                                string='Aggregate'
+                                class='btn-primary'
+                                type='object'/>
+                        or
+                        <button string='Cancel'
+                                class='btn-default'
+                                special='cancel'/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <!-- action to launch -->
+        <act_window id="act_aggregate_authors"
+                    name="Aggregate other author"
+                    src_model="philmer.author"
+                    res_model="wizard_aggregate_authors"
+                    view_mode="form"
+                    target="new"
+                    key2="client_action_multi"/>
+    </data>
+</openerp>

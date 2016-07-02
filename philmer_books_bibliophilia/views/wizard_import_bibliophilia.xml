@@ -8,22 +8,6 @@
             <field name='model'>wizard_import_bibliophilia</field>
             <field name='arch' type='xml'> 
                 <form string='Import Bibliophilia file'>
-                    <!--<sheet>
-                        <group>
-                            <field name='finput'/>
-                            <field name='path'/>
-                        </group>
-                    </sheet>
-                    <footer>
-                        <button name='import_file'
-                                string='Import'
-                                class='btn-primary'
-                                type='object'/>
-                        or
-                        <button string='Cancel'
-                                class='btn-default'
-                                special='cancel'/>
-                    </footer>-->
                     <sheet>
                         <group>
                             <field name='finput'/>
