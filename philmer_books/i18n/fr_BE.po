@@ -1,0 +1,755 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* philmer_books
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-02 14:15+0000\n"
+"PO-Revision-Date: 2016-07-02 14:15+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: philmer_books
+#: view:res.partner:philmer_books.view_editor_form
+msgid "(edit company address)"
+msgstr "(modifier l'adresse de la société)"
+
+#. module: philmer_books
+#: model:ir.actions.act_window,help:philmer_books.action_editor_form
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a contact in your address book.\n"
+"              </p><p>\n"
+"                Odoo helps you easily track all activities related to\n"
+"                a editor.\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a contact in your address book.\n"
+"              </p><p>\n"
+"                Odoo helps you easily track all activities related to\n"
+"                a editor.\n"
+"              </p>\n"
+"            "
+
+#. module: philmer_books
+#: field:philmer.author,active:0
+#: field:philmer.book,active:0
+#: field:philmer.book.category,active:0
+#: field:philmer.book.serie,active:0
+#: field:philmer.book.tag,active:0
+msgid "Active"
+msgstr "Actif"
+
+#. module: philmer_books
+#: view:res.partner:philmer_books.view_editor_form
+msgid "Address"
+msgstr "Adresse"
+
+#. module: philmer_books
+#: selection:philmer.book,book_type:0
+msgid "Anthology"
+msgstr "Anthologie"
+
+#. module: philmer_books
+#: selection:philmer.book,book_type:0
+msgid "Article"
+msgstr "Article"
+
+#. module: philmer_books
+#: view:philmer.author:philmer_books.philmer_author_form
+#: selection:philmer.book.participation,participation_type:0
+msgid "Author"
+msgstr "Auteur"
+
+#. module: philmer_books
+#: view:philmer.book:philmer_books.philmer_book_form
+msgid "Author - Type"
+msgstr "Auteur - Type"
+
+#. module: philmer_books
+#: field:philmer.book.participation,author_name:0
+msgid "Author and type"
+msgstr "Auteur et type"
+
+#. module: philmer_books
+#: field:philmer.book.participation,author_id:0
+msgid "Author id"
+msgstr "Auteur id"
+
+#. module: philmer_books
+#: model:ir.model,name:philmer_books.model_philmer_author
+msgid "Author of book, article, preface, illustration, ..."
+msgstr "Auteur du livre, de l'article, de la préface, illustrateur..."
+
+#. module: philmer_books
+#: model:ir.actions.act_window,name:philmer_books.philmer_author_action
+#: model:ir.ui.menu,name:philmer_books.philmer_author_menu
+#: view:philmer.book:philmer_books.philmer_book_form
+#: field:philmer.book,author_ids:0
+msgid "Authors"
+msgstr "Auteurs"
+
+#. module: philmer_books
+#: selection:philmer.book,book_type:0
+msgid "BD, Comic, Manga"
+msgstr "BD, Comic, Manga"
+
+#. module: philmer_books
+#: help:philmer.book.reading,cotation:0
+msgid "Between 0 and 10"
+msgstr "Entre 0 et 10"
+
+#. module: philmer_books
+#: selection:philmer.book,book_type:0
+msgid "Book"
+msgstr "Livre"
+
+#. module: philmer_books
+#: view:philmer.author:philmer_books.philmer_author_form
+msgid "Book - Type"
+msgstr "Livre - Type"
+
+#. module: philmer_books
+#: field:philmer.book.reading,book_name:0
+msgid "Book and date"
+msgstr "Livre et date"
+
+#. module: philmer_books
+#: field:philmer.book.participation,book_name:0
+msgid "Book and type"
+msgstr "Livre et type"
+
+#. module: philmer_books
+#: model:ir.model,name:philmer_books.model_philmer_book
+msgid "Book and/or Issues of Magazines"
+msgstr "Livre et/ou parutions de magazines"
+
+#. module: philmer_books
+#: field:philmer.book.participation,book_id:0
+#: field:philmer.book.reading,book_id:0
+#: field:philmer.reading,book_id:0
+msgid "Book id"
+msgstr "Livre id"
+
+#. module: philmer_books
+#: view:philmer.book:philmer_books.philmer_book_form
+msgid "Book or Zine"
+msgstr "Livre ou Zine"
+
+#. module: philmer_books
+#: view:website:philmer_books.qweb_philmer_book_catalog
+msgid "Book's Catalog"
+msgstr "Catalogue des livres"
+
+#. module: philmer_books
+#: model:ir.actions.act_window,name:philmer_books.philmer_book_serie_action
+msgid "Book's Series"
+msgstr "Séries de Livres"
+
+#. module: philmer_books
+#: model:ir.actions.act_window,name:philmer_books.philmer_book_category_action
+#: model:ir.ui.menu,name:philmer_books.philmer_book_category_menu
+msgid "Book's categories"
+msgstr "Catégories de Livres"
+
+#. module: philmer_books
+#: model:ir.ui.menu,name:philmer_books.philmer_book_serie_menu
+msgid "Book's series"
+msgstr "Séries de Livres"
+
+#. module: philmer_books
+#: model:ir.actions.act_window,name:philmer_books.philmer_book_book_action
+#: model:ir.ui.menu,name:philmer_books.philmer_book_menu
+#: view:philmer.author:philmer_books.philmer_author_form
+#: field:philmer.author,book_ids:0
+#: field:philmer.book.category,book_ids:0
+#: field:philmer.book.serie,book_ids:0
+#: view:philmer.book.tag:philmer_books.philmer_book_tag_form
+#: field:philmer.book.tag,book_ids:0
+msgid "Books"
+msgstr "Livres"
+
+#. module: philmer_books
+#: model:ir.model,name:philmer_books.model_philmer_book_tag
+msgid "Books Tags"
+msgstr "Etiquettes de livres"
+
+#. module: philmer_books
+#: model:ir.ui.menu,name:philmer_books.philmer_book_book_menu
+msgid "Books and Zines"
+msgstr "Livres et Zines"
+
+#. module: philmer_books
+#: model:ir.ui.menu,name:philmer_books.philmer_book_main_menu
+msgid "Books, Zines and Authors"
+msgstr "Livres, Zines et Auteurs"
+
+#. module: philmer_books
+#: view:philmer.book:philmer_books.philmer_book_form
+msgid "Borrow"
+msgstr "Emprunt"
+
+#. module: philmer_books
+#: field:philmer.book,borrow_date:0
+msgid "Borrow Date"
+msgstr "Date d'emprunt"
+
+#. module: philmer_books
+#: field:philmer.book,borrower_id:0
+msgid "Borrower"
+msgstr "Emprunteur"
+
+#. module: philmer_books
+#: model:ir.actions.report.xml,name:philmer_books.report_philmer_book_catalog
+msgid "Catalog"
+msgstr "Catalogue"
+
+#. module: philmer_books
+#: view:philmer.book.category:philmer_books.philmer_book_category_tree
+msgid "Categories"
+msgstr "Catégories"
+
+#. module: philmer_books
+#: field:philmer.book,category_id:0
+#: view:philmer.book.category:philmer_books.philmer_book_category_form
+#: field:philmer.book.category,name:0
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: philmer_books
+#: view:website:philmer_books.qweb_philmer_book_catalog
+msgid "Category :"
+msgstr "Catégorie :"
+
+#. module: philmer_books
+#: model:ir.model,name:philmer_books.model_philmer_book_category
+msgid "Category of books, in an hierarchical way, to permit \"Litterature / Science Fiction / Hard Science\" as category"
+msgstr "Catégorie de livres, sous format hiérachique, pour permettre d'avoir une catégorie de type \"Littérature / Science-fiction / Science pure\"."
+
+#. module: philmer_books
+#: view:res.partner:philmer_books.view_editor_form
+msgid "City"
+msgstr "Ville"
+
+#. module: philmer_books
+#: field:philmer.book,classification:0
+msgid "Classification"
+msgstr "Rangement"
+
+#. module: philmer_books
+#: field:philmer.book,collection:0
+msgid "Collection"
+msgstr "Collection"
+
+#. module: philmer_books
+#: view:res.partner:philmer_books.view_editor_form
+msgid "Company"
+msgstr "Société"
+
+#. module: philmer_books
+#: model:ir.ui.menu,name:philmer_books.philmer_book_configuration_menu
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: philmer_books
+#: field:philmer.book.reading,cotation:0
+#: field:philmer.reading,cotation:0
+msgid "Cotation"
+msgstr "Cote"
+
+#. module: philmer_books
+#: view:res.partner:philmer_books.view_editor_filter
+#: view:res.partner:philmer_books.view_editor_form
+msgid "Country"
+msgstr "Pays"
+
+#. module: philmer_books
+#: selection:philmer.book.participation,participation_type:0
+msgid "Cover Illustrator"
+msgstr "Illustrateur de la couverture"
+
+#. module: philmer_books
+#: model:ir.actions.act_window,help:philmer_books.action_reader
+msgid "Create and manage readers of the books."
+msgstr "Crée et gère les lecteurs des livres."
+
+#. module: philmer_books
+#: field:philmer.author,create_uid:0
+#: field:philmer.book,create_uid:0
+#: field:philmer.book.category,create_uid:0
+#: field:philmer.book.participation,create_uid:0
+#: field:philmer.book.reading,create_uid:0
+#: field:philmer.book.serie,create_uid:0
+#: field:philmer.book.tag,create_uid:0
+#: field:philmer.reading,create_uid:0
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: philmer_books
+#: field:philmer.author,create_date:0
+#: field:philmer.book,create_date:0
+#: field:philmer.book.category,create_date:0
+#: field:philmer.book.participation,create_date:0
+#: field:philmer.book.reading,create_date:0
+#: field:philmer.book.serie,create_date:0
+#: field:philmer.book.tag,create_date:0
+#: field:philmer.reading,create_date:0
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: philmer_books
+#: field:philmer.book.reading,reading_date:0
+msgid "Date"
+msgstr "Date"
+
+#. module: philmer_books
+#: field:philmer.reading,date:0
+msgid "Date of end of reading"
+msgstr "Date de fin de lecture"
+
+#. module: philmer_books
+#: view:philmer.author:philmer_books.philmer_author_form
+#: field:philmer.author,description:0
+#: view:philmer.book:philmer_books.philmer_book_form
+msgid "Description"
+msgstr "Description"
+
+#. module: philmer_books
+#: field:philmer.book,description:0
+msgid "Description/Back"
+msgstr "Description/Dos"
+
+#. module: philmer_books
+#: field:philmer.author,display_name:0
+#: field:philmer.book,display_name:0
+#: field:philmer.book.category,display_name:0
+#: field:philmer.book.participation,display_name:0
+#: field:philmer.book.reading,display_name:0
+#: field:philmer.book.serie,display_name:0
+#: field:philmer.book.tag,display_name:0
+#: field:philmer.reading,display_name:0
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: philmer_books
+#: field:philmer.book,editor_id:0
+#: view:res.partner:philmer_books.view_editor_form
+msgid "Editor"
+msgstr "Editeur"
+
+#. module: philmer_books
+#: model:ir.actions.act_window,name:philmer_books.action_editor_form
+#: model:ir.ui.menu,name:philmer_books.menu_editor_form
+#: view:res.partner:philmer_books.view_editor_filter
+#: view:res.partner:philmer_books.view_editor_tree
+msgid "Editors"
+msgstr "Editeurs"
+
+#. module: philmer_books
+#: view:res.users:philmer_books.view_reader_form
+msgid "Email Address"
+msgstr "Adresse électronique"
+
+#. module: philmer_books
+#: field:philmer.author,first_name:0
+msgid "First Name"
+msgstr "Prénom"
+
+#. module: philmer_books
+#: field:philmer.book,first_page:0
+msgid "First Page"
+msgstr "Première Page"
+
+#. module: philmer_books
+#: field:philmer.book,book_format:0
+msgid "Format"
+msgstr "Format"
+
+#. module: philmer_books
+#: view:website:philmer_books.qweb_philmer_book_catalog
+msgid "Format :"
+msgstr "Format :"
+
+#. module: philmer_books
+#: help:philmer.book.reading,reading_date:0
+msgid "Format : YYYY-MM-DD; Date can be partial : YYYY or YYYY-MM"
+msgstr "Format : AAAA-MM-JJ; La date peut être partielle : AAAA or AAAA-MM"
+
+#. module: philmer_books
+#: view:res.partner:philmer_books.view_editor_filter
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: philmer_books
+#: field:philmer.author,id:0
+#: field:philmer.book,id:0
+#: field:philmer.book.category,id:0
+#: field:philmer.book.participation,id:0
+#: field:philmer.book.reading,id:0
+#: field:philmer.book.serie,id:0
+#: field:philmer.book.tag,id:0
+#: field:philmer.reading,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: philmer_books
+#: field:philmer.book,isbn:0
+msgid "ISBN"
+msgstr "ISBN"
+
+#. module: philmer_books
+#: selection:philmer.book.participation,participation_type:0
+msgid "Inner illustrator"
+msgstr "Illustrateur intérieur"
+
+#. module: philmer_books
+#: view:res.partner:philmer_books.view_editor_form
+msgid "Is a Company?"
+msgstr "Est une société ?"
+
+#. module: philmer_books
+#: field:philmer.book,language_id:0
+msgid "Language"
+msgstr "Langue"
+
+#. module: philmer_books
+#: field:philmer.author,__last_update:0
+#: field:philmer.book,__last_update:0
+#: field:philmer.book.category,__last_update:0
+#: field:philmer.book.participation,__last_update:0
+#: field:philmer.book.reading,__last_update:0
+#: field:philmer.book.serie,__last_update:0
+#: field:philmer.book.tag,__last_update:0
+#: field:philmer.reading,__last_update:0
+msgid "Last Modified on"
+msgstr "Modifié en dernier le"
+
+#. module: philmer_books
+#: field:philmer.author,last_name:0
+msgid "Last Name"
+msgstr "Nom"
+
+#. module: philmer_books
+#: field:philmer.author,write_uid:0
+#: field:philmer.book,write_uid:0
+#: field:philmer.book.category,write_uid:0
+#: field:philmer.book.participation,write_uid:0
+#: field:philmer.book.reading,write_uid:0
+#: field:philmer.book.serie,write_uid:0
+#: field:philmer.book.tag,write_uid:0
+#: field:philmer.reading,write_uid:0
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: philmer_books
+#: field:philmer.author,write_date:0
+#: field:philmer.book,write_date:0
+#: field:philmer.book.category,write_date:0
+#: field:philmer.book.participation,write_date:0
+#: field:philmer.book.reading,write_date:0
+#: field:philmer.book.serie,write_date:0
+#: field:philmer.book.tag,write_date:0
+#: field:philmer.reading,write_date:0
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: philmer_books
+#: help:philmer.reading,date:0
+msgid "Leave it empty if current reading"
+msgstr "Laissez le vide si la lectuire est en cours"
+
+#. module: philmer_books
+#: model:ir.model,name:philmer_books.model_philmer_book_participation
+msgid "Link between Book and Author with the type of link"
+msgstr "Lien entre un livre et un auteur, avec le type de lien"
+
+#. module: philmer_books
+#: selection:philmer.book,book_type:0
+msgid "Magazine"
+msgstr "Magazine"
+
+#. module: philmer_books
+#: selection:philmer.book,book_type:0
+msgid "Magazine Issue"
+msgstr "Parution de Magazine"
+
+#. module: philmer_books
+#: model:ir.model,name:philmer_books.model_philmer_reading
+msgid "Mark the reading of a book by a user"
+msgstr "Enregistre la lecture d'un livre par un utilisateur"
+
+#. module: philmer_books
+#: field:philmer.author,name:0
+#: view:philmer.book:philmer_books.philmer_book_form
+#: field:philmer.book,name:0
+#: field:philmer.book.participation,name:0
+#: field:philmer.book.reading,name:0
+#: field:philmer.book.tag,name:0
+#: field:philmer.reading,name:0
+#: view:res.partner:philmer_books.view_editor_form
+msgid "Name"
+msgstr "Nom"
+
+#. module: philmer_books
+#: field:philmer.reading,note:0
+msgid "Note"
+msgstr "Note"
+
+#. module: philmer_books
+#: help:philmer.reading,note:0
+msgid "Note about this bbok by this user"
+msgstr "Note à propos de ce livre par cet utilisateur"
+
+#. module: philmer_books
+#: selection:philmer.book,book_type:0
+msgid "Novel"
+msgstr "Nouvelle"
+
+#. module: philmer_books
+#: field:philmer.book,number:0
+msgid "Number"
+msgstr "Numéro"
+
+#. module: philmer_books
+#: help:philmer.book,number:0
+msgid "Number in the serie, or magazine number"
+msgstr "Numéro dans la série ou numéro du magazine"
+
+#. module: philmer_books
+#: help:philmer.book,sub_name:0
+msgid "Optional Sub Name"
+msgstr "Sous titre optionnel"
+
+#. module: philmer_books
+#: field:philmer.book,original_name:0
+msgid "Original Name in the original language"
+msgstr "Nom dans la langue d'origine"
+
+#. module: philmer_books
+#: view:philmer.author:philmer_books.philmer_author_form
+#: field:philmer.author,other_names:0
+msgid "Other Names"
+msgstr "Autres noms"
+
+#. module: philmer_books
+#: field:philmer.book,pages:0
+msgid "Pages"
+msgstr "Pages"
+
+#. module: philmer_books
+#: field:philmer.book.category,parent_id:0
+msgid "Parent Category"
+msgstr "Catégorie parente"
+
+#. module: philmer_books
+#: field:philmer.book,parent_id:0
+msgid "Parent id"
+msgstr "Parent"
+
+#. module: philmer_books
+#: field:philmer.book.category,parent_left:0
+msgid "Parent left"
+msgstr "Parent gauche"
+
+#. module: philmer_books
+#: field:philmer.book.category,parent_right:0
+msgid "Parent right"
+msgstr "Parent droite"
+
+#. module: philmer_books
+#: field:philmer.book.participation,participation_type:0
+msgid "Participation type"
+msgstr "Type de Participation"
+
+#. module: philmer_books
+#: field:philmer.book,parution_date:0
+msgid "Parution"
+msgstr "Parution"
+
+#. module: philmer_books
+#: selection:philmer.book.participation,participation_type:0
+msgid "Preface"
+msgstr "Préface"
+
+#. module: philmer_books
+#: selection:philmer.book,book_format:0
+msgid "Printed"
+msgstr "Imprimé"
+
+#. module: philmer_books
+#: view:philmer.book:philmer_books.philmer_book_form
+msgid "Reader and Date"
+msgstr "Lecteur et date"
+
+#. module: philmer_books
+#: model:ir.actions.act_window,name:philmer_books.action_reader
+#: model:ir.ui.menu,name:philmer_books.menu_action_reader
+#: view:res.users:philmer_books.view_reader_form
+#: view:res.users:philmer_books.view_reader_tree
+msgid "Readers"
+msgstr "Lecteurs"
+
+#. module: philmer_books
+#: view:philmer.book.reading:philmer_books.philmer_author_tree
+#: view:philmer.book.reading:philmer_books.philmer_book_reading_form
+msgid "Reading of book"
+msgstr "Lecture d'un livre"
+
+#. module: philmer_books
+#: model:ir.actions.act_window,name:philmer_books.philmer_book_reading_action
+#: model:ir.ui.menu,name:philmer_books.philmer_book_reading_menu
+#: view:philmer.book:philmer_books.philmer_book_form
+#: field:philmer.book,reading_ids:0
+msgid "Readings"
+msgstr "Lectures"
+
+#. module: philmer_books
+#: model:ir.model,name:philmer_books.model_philmer_book_reading
+msgid "Record the reading of a book by a user"
+msgstr "Enregistre la lecture d'un livre par un utilisateur"
+
+#. module: philmer_books
+#: model:ir.ui.menu,name:philmer_books.philmer_book_report_menu
+msgid "Reports"
+msgstr "Rapports"
+
+#. module: philmer_books
+#: selection:philmer.book.participation,participation_type:0
+msgid "Scenarist"
+msgstr "Scénariste"
+
+#. module: philmer_books
+#: view:res.partner:philmer_books.view_editor_filter
+msgid "Search Editor"
+msgstr "Editeur de recherche"
+
+#. module: philmer_books
+#: field:philmer.book.serie,name:0
+msgid "Serie Name"
+msgstr "Nom de la Série"
+
+#. module: philmer_books
+#: model:ir.model,name:philmer_books.model_philmer_book_serie
+msgid "Serie of books; Cycle of books"
+msgstr "Série ou cycle de livres"
+
+#. module: philmer_books
+#: field:philmer.book,serie_id:0
+msgid "Serie/Cycle"
+msgstr "Série/Cycle"
+
+#. module: philmer_books
+#: view:philmer.book.serie:philmer_books.philmer_book_serie_form
+#: view:philmer.book.serie:philmer_books.philmer_book_serie_tree
+msgid "Series/Cycles"
+msgstr "Séries/Cycles"
+
+#. module: philmer_books
+#: view:philmer.author:philmer_books.philmer_author_form
+msgid "Split"
+msgstr "Divise"
+
+#. module: philmer_books
+#: view:res.partner:philmer_books.view_editor_form
+msgid "State"
+msgstr "État"
+
+#. module: philmer_books
+#: view:res.partner:philmer_books.view_editor_form
+msgid "Street..."
+msgstr "Rue..."
+
+#. module: philmer_books
+#: field:philmer.book,sub_name:0
+msgid "Sub Name"
+msgstr "Sous-titre"
+
+#. module: philmer_books
+#: field:philmer.book.category,child_ids:0
+msgid "Sub categories"
+msgstr "Catégories filles"
+
+#. module: philmer_books
+#: view:philmer.book.tag:philmer_books.philmer_book_tag_form
+msgid "Tag"
+msgstr "Etiquette"
+
+#. module: philmer_books
+#: model:ir.actions.act_window,name:philmer_books.philmer_tag_action
+#: model:ir.ui.menu,name:philmer_books.philmer_book_tag_menu
+#: field:philmer.book,tag_ids:0
+msgid "Tags"
+msgstr "Etiquettes"
+
+#. module: philmer_books
+#: field:philmer.book,book_type:0
+msgid "Type"
+msgstr "Type"
+
+#. module: philmer_books
+#: view:website:philmer_books.qweb_philmer_book_catalog
+msgid "Type :"
+msgstr "Type :"
+
+#. module: philmer_books
+#: view:philmer.book:philmer_books.philmer_book_form
+msgid "Under title"
+msgstr "Sous-titre"
+
+#. module: philmer_books
+#: field:philmer.book.reading,user_name:0
+msgid "User and date"
+msgstr "Lecteur et date"
+
+#. module: philmer_books
+#: field:philmer.book.reading,user_id:0
+#: field:philmer.reading,user_id:0
+msgid "User id"
+msgstr "Lecteur"
+
+#. module: philmer_books
+#: view:res.users:philmer_books.view_reader_form
+msgid "You are creating a new user. After saving, the user will receive an invite email containing a link to set its password."
+msgstr "Vous êtes en train de créer un nouvel utilisateur. Après son enregistrement, l'utilisateur recevra un courriel contenant un lien pour l'inviter à définir son mot de passe."
+
+#. module: philmer_books
+#: view:res.partner:philmer_books.view_editor_form
+msgid "ZIP"
+msgstr "Code postal"
+
+#. module: philmer_books
+#: view:res.partner:philmer_books.view_editor_kanban
+msgid "at"
+msgstr "à"
+
+#. module: philmer_books
+#: view:res.partner:philmer_books.view_editor_form
+msgid "e.g. Editor"
+msgstr "p.e. Editeur"
+
+#. module: philmer_books
+#: view:res.partner:philmer_books.view_editor_form
+msgid "e.g. www.odoo.com"
+msgstr "ex : www.odoo.com"
+
+#. module: philmer_books
+#: selection:philmer.book,book_format:0
+msgid "eBook"
+msgstr "eBook"
+
+#. module: philmer_books
+#: selection:philmer.book,book_format:0
+msgid "eBook and Printed"
+msgstr "eBook et imprimé"
+
+#. module: philmer_books
+#: view:res.users:philmer_books.view_reader_form
+msgid "email@yourcompany.com"
+msgstr " email@yourcompany.com"
+

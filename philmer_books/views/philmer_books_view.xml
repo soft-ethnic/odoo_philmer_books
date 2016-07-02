@@ -10,9 +10,10 @@
             <field name="arch" type="xml">
                 <form string="Book or Zine">
                     <sheet>
-                        <div class="oe_title">
+                        <field name="cover" widget="image" class="oe_left" options='{"size": [160, 160]}'/>
+                        <div class="oe_title" colspan="2">
                             <div class="oe_edit_only"><label for="name"/></div>
-                            <h1><field name="name" default_focus="1" placeholder="Name"/></h1>
+                            <h1><field name="name" default_focus="1" placeholder="Name" colspan="4"/></h1>
                         </div>
                         <div colspan="2">
                             <div class="oe_edit_only"><label for="subname"/></div>
@@ -23,11 +24,17 @@
                                 <field name="book_type" colspan="2"/>
                                 <field name="book_format" colspan="2"/>
                                 <field name="category_id"/>
+                                <field name="isbn"/>
+                                <field name="language_id"/>
                             </group>
                             <group>
-                                <field name="editor"/>
+                                <field name="editor_id"/>
                                 <field name="collection"/>
+                                <field name="serie_id"/>
+                                <field name="number"/>
                                 <field name="parution_date"/>
+                                <field name="active" class="oe_edit_only"/>
+                                <field name="parent_id" attrs="{'invisible': [('book_type','not in', ['article','zine_issue'])]}"/>
                             </group>
                         </group>
                         <group>
@@ -36,20 +43,60 @@
                                 <field name="first_page"/>
                                 <field name="classification"/>
                             </group>
-                        </group>
-                        <group string="Authors">
-                            <field name="author_ids" nolabel="1"/>
-                        </group>
-                        <label for="tag_ids"/>
-                        <field name="tag_ids" widget="many2many_tags"/>
-                        <group>
                             <group>
-                                <field name="borrower_id"/>
-                                <field name="borrow_date"/>
+                                <label for="tag_ids"/>
+                                <field name="tag_ids" widget="many2many_tags" nolabel="1"/>
                             </group>
                         </group>
-                        <field name="parent_id" attrs="{'invisible': [('book_type','not in', ['article','zine_issue'])]}"/>
-                        <fields name="active"/>
+                        <group string="Authors">
+                            <field name="author_ids" mode="tree" nolabel="1" context="{'default_book_id': active_id}">
+                                <tree>
+                                    <field name="author_name"/>
+                                </tree>
+                                <form string="Author - Type">
+                                    <sheet>
+                                        <group>
+                                            <group>
+                                                <field name="participation_type"/>
+                                                <field name="author_id"/>
+                                            </group>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </group>
+                        <notebook>
+                            <page string="Description">
+                                <separator string="Description"/>
+                                <field name="description" colspan="2"/>
+                            </page>
+                            <page string="Borrow">
+                                <group>
+                                    <group>
+                                        <field name="borrower_id"/>
+                                        <field name="borrow_date"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Readings">
+                                <field name="reading_ids" mode="tree" nolabel="1" context="{'default_book_id': active_id}">
+                                    <tree>
+                                        <field name="user_name"/>
+                                    </tree>
+                                    <form string="Reader and Date">
+                                        <sheet>
+                                            <group>
+                                                <group>
+                                                    <field name="user_id"/>
+                                                    <field name="reading_date"/>
+                                                    <field name="cotation"/>
+                                                </group>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
@@ -72,15 +119,36 @@
             <field name="model">philmer.author</field>
             <field name="arch" type="xml">
                 <form string="Author">
-                    <div class="oe_title oe_read_only">
-                        <h1><field name="name"/></h1>
-                    </div>
-                    <div class="oe_edit_only">
-                        <h1><field name="last_name"/>
-                        <field name="first_name"/></h1>
-                    </div>
-                    <field name="description" colspan="4"/>
-                    <field name="other_names"/>
+                    <sheet>
+                        <div class="oe_title oe_read_only">
+                            <label for="name"/><h1><field name="name" colspan="2"/></h1>
+                        </div>
+                        <div class="oe_edit_only">
+                            <label for="last_name"/><h1><field name="last_name"/></h1>
+                            <label for="first_name"/><h1><field name="first_name"/></h1>
+                        </div>
+                        <button name="split_names" type="object" string="Split" class="oe_highlight" />
+                        <separator string="Books"/>
+                        <field name="book_ids" mode="tree" nolabel="1" colspan="2" context="{'default_author_id': active_id}">
+                            <tree>
+                                <field name="book_name"/>
+                            </tree>
+                            <form string="Book - Type">
+                                <sheet>
+                                    <group>
+                                        <group>
+                                            <field name="participation_type"/>
+                                            <field name="book_id"/>
+                                        </group>
+                                    </group>
+                                </sheet>
+                            </form>
+                        </field>
+                        <separator string="Description"/>
+                        <field name="description"/>
+                        <separator string="Other Names"/>
+                        <field name="other_names" colspan="2"/>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -89,8 +157,8 @@
             <field name="model">philmer.author</field>
             <field name="arch" type="xml">
                 <tree string="Authors">
-                    <!--<field name="name"/>-->
-                    <field name="last_name"/>
+                    <field name="name"/>
+                    <!--<field name="last_name"/>-->
                 </tree>
             </field>
         </record>
@@ -101,14 +169,16 @@
             <field name="model">philmer.book.tag</field>
             <field name="arch" type="xml">
                 <form string="Tag">
-                    <div class="oe_title">
-                        <div class="oe_edit_only"><label for="name"/></div>
-                        <h1><field name="name"/></h1>
-                    </div>
-                    <group string="Books">
-                        <field name="book_ids" nolabel="1"/>
-                    </group>
-                    <field name="active"/>
+                    <sheet>
+                        <div class="oe_title">
+                            <div class="oe_edit_only"><label for="name"/></div>
+                            <h1><field name="name"/></h1>
+                        </div>
+                        <group string="Books">
+                            <field name="book_ids" nolabel="1"/>
+                        </group>
+                        <field name="active"/>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -128,11 +198,20 @@
             <field name="model">philmer.book.category</field>
             <field name="arch" type="xml">
                 <form string="Category">
-                    <div class="oe_title">
-                        <h1><field name="name"/></h1>
-                    </div>
-                    <field name="parent_id"/>
-                    <field name="active"/>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/><h1><field name="name" colspan="2"/></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="parent_id"/>
+                                <field name="active"/>
+                            </group>
+                            <group>
+                                <field name="book_ids" nolabel="1"/>
+                            </group>
+                        </group>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -141,6 +220,36 @@
             <field name="model">philmer.book.category</field>
             <field name="arch" type="xml">
                 <tree string="Categories">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- BOOK SERIES/CYCLES -->
+        <record model="ir.ui.view" id="philmer_book_serie_form">
+            <field name="name">philmer.book.serie.form</field>
+            <field name="model">philmer.book.serie</field>
+            <field name="arch" type="xml">
+                <form string="Series/Cycles">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/><h1><field name="name" colspan="2"/></h1>
+                        </div>
+                        <field name="book_ids" colspan="2"/>
+                        <group>
+                            <group>
+                                <field name="active"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="philmer_book_serie_tree">
+            <field name="name">philmer.book.serie.tree</field>
+            <field name="model">philmer.book.serie</field>
+            <field name="arch" type="xml">
+                <tree string="Series/Cycles">
                     <field name="name"/>
                 </tree>
             </field>
@@ -159,6 +268,9 @@
         <act_window id="philmer_book_category_action"
                     name="Book's categories"
                     res_model="philmer.book.category"/>
+        <act_window id="philmer_book_serie_action"
+                    name="Book's Series"
+                    res_model="philmer.book.serie"/>
 
         <!-- MENUS -->
         <!-- main menu -->
@@ -195,5 +307,10 @@
                   action="philmer_book_category_action"
                   parent="philmer_book_configuration_menu"
                   sequence="20"/>
+        <menuitem id="philmer_book_serie_menu"
+                  name="Book's series"
+                  action="philmer_book_serie_action"
+                  parent="philmer_book_configuration_menu"
+                  sequence="30"/>
     </data>
 </openerp>

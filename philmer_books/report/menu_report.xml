@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Main menu to contains others reports menus -->
+        <menuitem id="philmer_book_report_menu"
+                  name="Reports"
+                  parent="philmer_book_menu"
+                  sequence="50"/>
+    </data>
+</openerp>

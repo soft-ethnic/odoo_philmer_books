@@ -8,9 +8,11 @@
             <field name="model">philmer.book.imported_id</field>
             <field name="arch" type="xml">
                 <form string="Bibliophilia Imported IDs">
-                    <field name="source"/>
-                    <field name="id_in_source"/>
-                    <field name="philmer_id"/>
+                    <sheet>
+                        <field name="source"/>
+                        <field name="id_in_source"/>
+                        <field name="philmer_id"/>
+                    </sheet>
                 </form>
             </field>
         </record>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- VIEWS -->
+        <!-- BOOKS -->
+        <record model="ir.ui.view" id="philmer_book_reading_form">
+            <field name="name">philmer.book.reading.form</field>
+            <field name="model">philmer.book.reading</field>
+            <field name="arch" type="xml">
+                <form string="Reading of book">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="user_id" colspan="2"/>
+                                <field name="book_id" colspan="2"/>
+                            </group>
+                            <group>
+                                <field name="reading_date"/>
+                                <field name="cotation"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="philmer_author_tree">
+            <field name="name">philmer.book.reading.tree</field>
+            <field name="model">philmer.book.reading</field>
+            <field name="arch" type="xml">
+                <tree string="Reading of book">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+
+        <!-- ACTIONS -->
+        <act_window id="philmer_book_reading_action"
+                    name="Readings"
+                    res_model="philmer.book.reading"/>
+
+        <!-- MENUS -->
+        <menuitem id="philmer_book_reading_menu"
+                  name="Readings"
+                  action="philmer_book_reading_action"
+                  parent="philmer_book_main_menu"
+                  sequence="30"/>
+    </data>
+</openerp>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <!-- Wizard forms -->
+        <record id='bibliophilia_import_wizard_main_form' model='ir.ui.view'>
+            <field name='name'>Bibliophilia Import Wizard main form</field>
+            <field name='model'>wizard_import_bibliophilia</field>
+            <field name='arch' type='xml'> 
+                <form string='Import Bibliophilia file'>
+                    <!--<sheet>
+                        <group>
+                            <field name='finput'/>
+                            <field name='path'/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name='import_file'
+                                string='Import'
+                                class='btn-primary'
+                                type='object'/>
+                        or
+                        <button string='Cancel'
+                                class='btn-default'
+                                special='cancel'/>
+                    </footer>-->
+                    <sheet>
+                        <group>
+                            <field name='finput'/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name='import_zip_file'
+                                string='Import Zip'
+                                class='btn-primary'
+                                type='object'/>
+                        or
+                        <button string='Cancel'
+                                class='btn-default'
+                                special='cancel'/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <!-- Actions -->
+        <act_window id='action_wizard_import_bibliophilia'
+                    name='Import Bibliophilia file'
+                    res_model='wizard_import_bibliophilia'
+                    view_mode='form'
+                    target='new'/>
+                    
+        <!-- Menus -->
+        <menuitem id="menu_wizard_books"
+                  name="Wizards"
+                  parent="philmer_books.philmer_book_menu"
+                  sequence="50"/>
+        <menuitem id="menu_wizard_import_bibliophilia"
+                  name="Import Bibliophilia"
+                  parent="menu_wizard_books"
+                  action="action_wizard_import_bibliophilia"
+                  sequence="10"/>
+                  
+    </data>
+</openerp>

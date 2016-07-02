@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="qweb_philmer_book_catalog">
+            <t t-call="report.html_container">
+                <t t-call="report.internal_layout">
+                    <div class="page">
+                        <h1>Book's Catalog</h1>
+                        <table class="table table-condensed">
+                            <tbody>
+                                <tr t-foreach="docs" t-as="b">
+                                    <div id="book" style="page-break-inside: avoid;">
+                                        <p style="font-size: 120%; border-top: 2px solid black;"><span t-esc="b.name"/></p>
+                                        <p t-if="b.sub_name" style="font-style: italic;"> <span t-esc="b.sub_name"/></p>
+                                        <p t-if="b.description">Description : <span style="font-style: italic;"><span t-esc="b.description"/></span></p>
+                                        <p t-if="b.tag_ids">Tags : <span t-foreach="b.tag_ids" t-as="tag"><span t-esc="tag.name"/><span t-if="not tag_last">, </span></span></p>
+                                        <p t-if="b.book_type">Type : <span t-esc="b.book_type"/></p>
+                                        <p t-if="b.book_format">Format : <span t-esc="b.book_format"/></p>
+                                        <p t-if="b.category_id">Category : <span t-esc="b.category_id.name"/></p>
+                                        <p t-if="b.isbn">ISBN : <span t-esc="b.isbn"/></p>
+                                        <p t-if="b.language_id">Langue : <span t-esc="b.language_id.name"/></p>
+                                        <p t-if="b.editor_id">Editor : <span t-esc="b.editor_id.name"/></p>
+                                        <p t-if="b.collection">Collection : <span t-esc="b.collection"/></p>
+                                        <p t-if="b.serie_id">Serie/Cycle : <span t-esc="b.serie_id.name"/></p>
+                                        <p t-if="b.parent_id">Inside : <span t-esc="b.parent_id.name"/></p>
+                                        <p t-if="b.number">Number : <span t-esc="b.number"/></p>
+                                        <p t-if="b.parution_date">Parution Date :  <span t-esc="b.parution_date"/></p>
+                                        <p t-if="b.pages">Number of pages :  <span t-esc="b.pages"/></p>
+                                        <p t-if="b.first_page">Begin at page :  <span t-esc="b.first_page"/></p>
+                                        <p t-if="b.classification">Classification : <span t-esc="b.classification"/></p>
+                                        <p t-if="b.author_ids">Authors : <span t-foreach="b.author_ids" t-as="a"><span t-esc="a.author_name"/><span t-if="not a_last">; </span></span></p>
+                                    </div>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+        
+        <report id="report_philmer_book_catalog"
+                name="philmer_books.qweb_philmer_book_catalog"
+                model="philmer.book"
+                string="Catalog"
+                report_type="qweb-pdf"/>
+
+        <record id="report_philmer_book_catalog" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="report.paperformat_euro"/>
+
+        </record>
+    </data>
+</openerp>

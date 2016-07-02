@@ -6,9 +6,10 @@
 This module permit the import of biblioPhilia backup files into Philmer's Books.\nManage the import of the same backup again and again.\nManage the link betweek Philmer's books and Bibliophilia's records'
 """,
     'depends': ['base','philmer_books'],
-    'data': ['views/philmer_books_imported_ids_view.xml',],
+    'data': ['views/philmer_books_imported_ids_view.xml',
+             'views/wizard_import_bibliophilia.xml',],
     'version':'1.0',
-    'application':True,
+    'application':False,
     'installable': True,
     'auto_install': False,
 }
