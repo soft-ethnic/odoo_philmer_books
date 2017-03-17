@@ -65,13 +65,13 @@ class philmer_book(models.Model):
         for book in self:
             if book.isbn:
                 if len(book.isbn) != 13:
-                    raise models.ValidationError('Only ISBN 13 digits are allowed : %s is not correct.' % book.isbn)
+                    raise models.ValidationError(_('Only ISBN 13 digits are allowed : %s is not correct.') % book.isbn)
                 else:
                     if not book.isbn.isdigit():
-                        raise models.ValidationError('Only digits are allowed in ISBN 13 digits : %s is not correct.' % book.isbn)
+                        raise models.ValidationError(_('Only digits are allowed in ISBN 13 digits : %s is not correct.') % book.isbn)
                     else:
                         if book.isbn[0:3] not in ('978','979'):
-                            raise models.ValidationError('The ISBN numbers MUST begin with 978 or 979 : %s is not correct.' % book.isbn)
+                            raise models.ValidationError(_('The ISBN numbers MUST begin with 978 or 979 : %s is not correct.') % book.isbn)
                         else:
                             value = 0
                             odd = True
@@ -83,7 +83,7 @@ class philmer_book(models.Model):
                                     odd = True
                                     value += (3*int(carac))
                             if int(book.isbn[12]) != ((10-(value % 10)) % 10):
-                                raise models.ValidationError('The check digit of %s is not correct : %s is different from the good value of %s [%s].' % (book.isbn,book.isbn[12],str(((10-(value % 10)) % 10)),str(value)))
+                                raise models.ValidationError(_('The check digit of %s is not correct : %s is different from the good value of %s [%s].') % (book.isbn,book.isbn[12],str(((10-(value % 10)) % 10)),str(value)))
 
 class philmer_author(models.Model):
     _name = 'philmer.author'
@@ -144,16 +144,16 @@ class philmer_book_participation(models.Model):
     
     name = fields.Char('Name',compute='_get_name',
                               search='_search_name',
-                              store=True,compute_sudo=False)
+                              store=False,compute_sudo=False)
     author_name = fields.Char('Author and type',compute='_get_author_name',
                                                 search='_search_author_name',
-                                                store=True,compute_sudo=False)
+                                                store=False,compute_sudo=False)
     book_name = fields.Char('Book and type',compute='_get_book_name',
                                             search='_search_book_name',
-                                            store=True,compute_sudo=False)
+                                            store=False,compute_sudo=False)
     author_id = fields.Many2one('philmer.author',required=True ,ondelete='cascade')
     book_id = fields.Many2one('philmer.book', required=True,ondelete='cascade')
-    participation_type = fields.Selection([('author','Author'),('illustrator','Inner illustrator'),('cover','Cover Illustrator'),('preface','Preface'),('scriptwriter','Scenarist')])
+    participation_type = fields.Selection([('author','Author'),('illustrator','Inner illustrator'),('cover','Cover Illustrator'),('preface','Preface'),('scriptwriter','Scenarist')],string='Type')
 
     @api.depends('author_id','participation_type')
     def _get_author_name(self):
@@ -170,7 +170,7 @@ class philmer_book_participation(models.Model):
         for part in self:
             res = part.book_id.name
             if part.participation_type:
-                res = part.participation_type + ' of ' + res
+                res = part.participation_type + _(' of ') + res
             part.book_name = res
     def _search_book_name(self,operator,value):
         return []
@@ -181,7 +181,7 @@ class philmer_book_participation(models.Model):
             res = part.author_id.name
             if part.participation_type:
                 res += ' [' + part.participation_type + ']'
-            res += ' of ' + part.book_id.name
+            res += _(' of ') + part.book_id.name
             part.name = res
     def _search_name(self,operator,value):
         return []
@@ -191,7 +191,7 @@ class philmer_reading(models.Model):
     _description = 'Mark the reading of a book by a user'
 
     name = fields.Char('Name',compute='_get_name',
-                              store=True,compute_sudo=False)
+                              store=False,compute_sudo=False)
     book_id = fields.Many2one('philmer.book', required=True)
     user_id = fields.Many2one('res.users', required=True)
     date = fields.Date('Date of end of reading', help='Leave it empty if current reading')

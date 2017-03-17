@@ -101,7 +101,7 @@
                 </form>
             </field>
         </record>
-        <record model="ir.ui.view" id="philmer_author_tree">
+        <record model="ir.ui.view" id="philmer_book_tree">
             <field name="name">philmer.book.tree</field>
             <field name="model">philmer.book</field>
             <field name="arch" type="xml">
@@ -110,6 +110,30 @@
                     <field name="book_type"/>
                     <field name="category_id"/>
                 </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="philmer_book_kanban">
+            <field name="name">philmer.book.kanban</field>
+            <field name="model">philmer.book</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="name"/>
+                    <field name="book_type"/>
+                    <field name="category_id"/>
+                    <!--<field name="cover"/>-->
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_card oe_kanban_global_click"> <!-- philmer_book_card -->
+                                <img t-att-src="kanban_image('philmer.book', 'cover', record.id.value)" class="oe_avatar philmer_kanban_book_box"/>
+                                <div class="oe_module_desc">
+                                    <h3><field name="name"/></h3><br/>
+                                    <field name="book_type"/><br/>
+                                    <field name="category_id"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
             </field>
         </record>
         
@@ -182,9 +206,9 @@
                 </form>
             </field>
         </record>
-        <record model="ir.ui.view" id="philmer_author_tree">
-            <field name="name">philmer.author.tree</field>
-            <field name="model">philmer.author</field>
+        <record model="ir.ui.view" id="philmer_book_tag_tree">
+            <field name="name">philmer.book.tag.tree</field>
+            <field name="model">philmer.book.tag</field>
             <field name="arch" type="xml">
                 <tree string="Tags">
                     <field name="name"/>
@@ -258,6 +282,8 @@
         <!-- ACTIONS -->
         <act_window id="philmer_book_book_action"
                     name="Books"
+                    view_type="form"
+                    view_mode="kanban,tree,form"
                     res_model="philmer.book"/>
         <act_window id="philmer_author_action"
                     name="Authors"

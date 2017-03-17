@@ -38,6 +38,7 @@
         <menuitem id="menu_wizard_books"
                   name="Wizards"
                   parent="philmer_books.philmer_book_menu"
+                  groups="philmer_books.philmer_books_manager"
                   sequence="50"/>
         <menuitem id="menu_wizard_import_bibliophilia"
                   name="Import Bibliophilia"

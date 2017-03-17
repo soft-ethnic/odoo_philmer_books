@@ -25,7 +25,7 @@ class philmer_book_reading(models.Model):
         for reading in self:
             res = reading.user_id.name
             if reading.reading_date:
-                res += ' on ' + reading.reading_date
+                res += _(' on ') + reading.reading_date
             reading.user_name = res
 
     @api.depends('book_id','reading_date')
@@ -33,14 +33,14 @@ class philmer_book_reading(models.Model):
         for reading in self:
             res = reading.book_id.name
             if reading.reading_date:
-                res += ' on ' + reading.reading_date
+                res += _(' on ') + reading.reading_date
             reading.book_name = res
 
     @api.depends('book_id','user_id','reading_date')
     def _get_name(self):
         for reading in self:
-            res = '%s has read %s' % (reading.user_id.name,reading.book_id.name)
+            res = _('%s has read %s') % (reading.user_id.name,reading.book_id.name)
             if reading.reading_date:
-                res += ' on ' + reading.reading_date
+                res += _(' on ') + reading.reading_date
             reading.name = res
 

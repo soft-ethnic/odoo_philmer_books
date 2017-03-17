@@ -1,0 +1,168 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* philmer_books_bibliophilia
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-03 18:28+0000\n"
+"PO-Revision-Date: 2016-07-03 18:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: philmer_books_bibliophilia
+#: selection:philmer.book.imported_id,philmer_id:0
+msgid "Author"
+msgstr "Auteur"
+
+#. module: philmer_books_bibliophilia
+#: model:ir.model,name:philmer_books_bibliophilia.model_philmer_author
+msgid "Author of book, article, preface, illustration, ..."
+msgstr "Auteur d'un livre, d'un article, d'une illustration, d'une préface, ..."
+
+#. module: philmer_books_bibliophilia
+#: model:ir.actions.act_window,name:philmer_books_bibliophilia.philmer_books_imported_ids_action
+#: model:ir.ui.menu,name:philmer_books_bibliophilia.philmer_books_imported_ids_menu
+#: view:philmer.book.imported_id:philmer_books_bibliophilia.philmer_books_imported_ids_form
+#: view:philmer.book.imported_id:philmer_books_bibliophilia.philmer_books_imported_ids_tree
+msgid "Bibliophilia Imported IDs"
+msgstr "IDs imports Bibliophilia"
+
+#. module: philmer_books_bibliophilia
+#: field:wizard_import_bibliophilia,finput:0
+msgid "Bibliophilia file"
+msgstr "Fichier Bibliophilia"
+
+#. module: philmer_books_bibliophilia
+#: selection:philmer.book.imported_id,philmer_id:0
+msgid "Book"
+msgstr "Livre"
+
+#. module: philmer_books_bibliophilia
+#: model:ir.model,name:philmer_books_bibliophilia.model_philmer_book
+msgid "Book and/or Issues of Magazines"
+msgstr "Livre et/ou parution d'un zine"
+
+#. module: philmer_books_bibliophilia
+#: view:wizard_import_bibliophilia:philmer_books_bibliophilia.bibliophilia_import_wizard_main_form
+msgid "Cancel"
+msgstr "Annule"
+
+#. module: philmer_books_bibliophilia
+#: field:philmer.book,cover:0
+msgid "Cover"
+msgstr "Couverture"
+
+#. module: philmer_books_bibliophilia
+#: field:wizard_import_bibliophilia,path:0
+msgid "Covers's Path"
+msgstr "Chemin des Couvertures"
+
+#. module: philmer_books_bibliophilia
+#: field:philmer.book.imported_id,create_uid:0
+#: field:wizard_import_bibliophilia,create_uid:0
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: philmer_books_bibliophilia
+#: field:philmer.book.imported_id,create_date:0
+#: field:wizard_import_bibliophilia,create_date:0
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: philmer_books_bibliophilia
+#: field:philmer.book.imported_id,display_name:0
+#: field:wizard_import_bibliophilia,display_name:0
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: philmer_books_bibliophilia
+#: selection:philmer.book.imported_id,philmer_id:0
+msgid "Editor"
+msgstr "Editeur"
+
+#. module: philmer_books_bibliophilia
+#: field:philmer.book.imported_id,id:0
+#: field:wizard_import_bibliophilia,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: philmer_books_bibliophilia
+#: field:philmer.book.imported_id,id_in_source:0
+msgid "ID in Source"
+msgstr "ID dans la Source"
+
+#. module: philmer_books_bibliophilia
+#: model:ir.model,name:philmer_books_bibliophilia.model_philmer_book_imported_id
+msgid "ID in source file of item in Philmers Books"
+msgstr "ID dans le fichier source des données dans les Philmer Books"
+
+#. module: philmer_books_bibliophilia
+#: model:ir.ui.menu,name:philmer_books_bibliophilia.menu_wizard_import_bibliophilia
+msgid "Import Bibliophilia"
+msgstr "Import Bibliophilia"
+
+#. module: philmer_books_bibliophilia
+#: model:ir.actions.act_window,name:philmer_books_bibliophilia.action_wizard_import_bibliophilia
+#: view:wizard_import_bibliophilia:philmer_books_bibliophilia.bibliophilia_import_wizard_main_form
+msgid "Import Bibliophilia file"
+msgstr "Import fichier Bibliophilia"
+
+#. module: philmer_books_bibliophilia
+#: view:wizard_import_bibliophilia:philmer_books_bibliophilia.bibliophilia_import_wizard_main_form
+msgid "Import Zip"
+msgstr "Importe le fichier Zip"
+
+#. module: philmer_books_bibliophilia
+#: field:philmer.book.imported_id,philmer_id:0
+msgid "Inserted as"
+msgstr "Inséré en tant que"
+
+#. module: philmer_books_bibliophilia
+#: field:philmer.book.imported_id,__last_update:0
+#: field:wizard_import_bibliophilia,__last_update:0
+msgid "Last Modified on"
+msgstr "Dernière modif le"
+
+#. module: philmer_books_bibliophilia
+#: field:philmer.book.imported_id,write_uid:0
+#: field:wizard_import_bibliophilia,write_uid:0
+msgid "Last Updated by"
+msgstr "Dernière modif par"
+
+#. module: philmer_books_bibliophilia
+#: field:philmer.book.imported_id,write_date:0
+#: field:wizard_import_bibliophilia,write_date:0
+msgid "Last Updated on"
+msgstr "Dernière modif le"
+
+#. module: philmer_books_bibliophilia
+#: model:ir.model,name:philmer_books_bibliophilia.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: philmer_books_bibliophilia
+#: help:wizard_import_bibliophilia,path:0
+msgid "Path to the covers folder."
+msgstr "Chemin vers le répertoire des couvertures."
+
+#. module: philmer_books_bibliophilia
+#: field:philmer.book.imported_id,source:0
+msgid "Source of external Data"
+msgstr "Source des données externes"
+
+#. module: philmer_books_bibliophilia
+#: model:ir.ui.menu,name:philmer_books_bibliophilia.menu_wizard_books
+msgid "Wizards"
+msgstr "Assistants"
+
+#. module: philmer_books_bibliophilia
+#: view:wizard_import_bibliophilia:philmer_books_bibliophilia.bibliophilia_import_wizard_main_form
+msgid "or"
+msgstr "ou"
+

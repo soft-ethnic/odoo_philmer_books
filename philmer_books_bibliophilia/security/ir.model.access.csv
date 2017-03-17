@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_philmer_book_imported_id_user,philmer_books.philmer_book_imported_id user,model_philmer_book_imported_id,philmer_books.philmer_books_user,1,0,0,0
+access_philmer_book_imported_id_manager,philmer_books.philmer_book_imported_id manager,model_philmer_book_imported_id,philmer_books.philmer_books_manager,1,1,1,1
+
+

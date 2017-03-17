@@ -6,14 +6,35 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-02 14:15+0000\n"
-"PO-Revision-Date: 2016-07-02 14:15+0000\n"
+"POT-Creation-Date: 2016-07-03 18:25+0000\n"
+"PO-Revision-Date: 2016-07-03 18:25+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: philmer_books
+#: code:addons/philmer_books/models/philmer_books.py:173
+#: code:addons/philmer_books/models/philmer_books.py:184
+#, python-format
+msgid " of "
+msgstr " de "
+
+#. module: philmer_books
+#: code:addons/philmer_books/models/philmer_book_reading.py:28
+#: code:addons/philmer_books/models/philmer_book_reading.py:36
+#: code:addons/philmer_books/models/philmer_book_reading.py:44
+#, python-format
+msgid " on "
+msgstr " le "
+
+#. module: philmer_books
+#: code:addons/philmer_books/models/philmer_book_reading.py:42
+#, python-format
+msgid "%s has read %s"
+msgstr "%s a lu %s"
 
 #. module: philmer_books
 #: view:res.partner:philmer_books.view_editor_form
@@ -30,10 +51,9 @@ msgid "<p class=\"oe_view_nocontent_create\">\n"
 "              </p>\n"
 "            "
 msgstr "<p class=\"oe_view_nocontent_create\">\n"
-"                Click to add a contact in your address book.\n"
+"                Cliquez pour ajouter un contact à votre livre d'adresse.\n"
 "              </p><p>\n"
-"                Odoo helps you easily track all activities related to\n"
-"                a editor.\n"
+"                Odoo vous aide à gérer les activités liées à un éditeur.\n"
 "              </p>\n"
 "            "
 
@@ -50,6 +70,21 @@ msgstr "Actif"
 #: view:res.partner:philmer_books.view_editor_form
 msgid "Address"
 msgstr "Adresse"
+
+#. module: philmer_books
+#: view:wizard_aggregate_authors:philmer_books.aggregate_authors_wizard_main_form
+msgid "Aggregate"
+msgstr "Regrouper"
+
+#. module: philmer_books
+#: view:wizard_aggregate_authors:philmer_books.aggregate_authors_wizard_main_form
+msgid "Aggregate Authors"
+msgstr "Regrouper des auteurs"
+
+#. module: philmer_books
+#: model:ir.actions.act_window,name:philmer_books.act_aggregate_authors
+msgid "Aggregate other author"
+msgstr "Regroupe un autre auteur"
 
 #. module: philmer_books
 #: selection:philmer.book,book_type:0
@@ -80,12 +115,17 @@ msgstr "Auteur et type"
 #. module: philmer_books
 #: field:philmer.book.participation,author_id:0
 msgid "Author id"
-msgstr "Auteur id"
+msgstr "Auteur ID"
 
 #. module: philmer_books
 #: model:ir.model,name:philmer_books.model_philmer_author
 msgid "Author of book, article, preface, illustration, ..."
-msgstr "Auteur du livre, de l'article, de la préface, illustrateur..."
+msgstr "Auteur d'un livre, d'un article, d'une illustration, d'une préface, ..."
+
+#. module: philmer_books
+#: field:wizard_aggregate_authors,aggregated_author_id:0
+msgid "Author to aggregate"
+msgstr "Auteur à regrouper"
 
 #. module: philmer_books
 #: model:ir.actions.act_window,name:philmer_books.philmer_author_action
@@ -96,9 +136,19 @@ msgid "Authors"
 msgstr "Auteurs"
 
 #. module: philmer_books
+#: view:website:philmer_books.qweb_philmer_book_catalog
+msgid "Authors :"
+msgstr "Auteurs :"
+
+#. module: philmer_books
 #: selection:philmer.book,book_type:0
 msgid "BD, Comic, Manga"
 msgstr "BD, Comic, Manga"
+
+#. module: philmer_books
+#: view:website:philmer_books.qweb_philmer_book_catalog
+msgid "Begin at page :"
+msgstr "Débute à la page :"
 
 #. module: philmer_books
 #: help:philmer.book.reading,cotation:0
@@ -128,14 +178,14 @@ msgstr "Livre et type"
 #. module: philmer_books
 #: model:ir.model,name:philmer_books.model_philmer_book
 msgid "Book and/or Issues of Magazines"
-msgstr "Livre et/ou parutions de magazines"
+msgstr "Livre et/ou parution d'un zine"
 
 #. module: philmer_books
 #: field:philmer.book.participation,book_id:0
 #: field:philmer.book.reading,book_id:0
 #: field:philmer.reading,book_id:0
 msgid "Book id"
-msgstr "Livre id"
+msgstr "Livre ID"
 
 #. module: philmer_books
 #: view:philmer.book:philmer_books.philmer_book_form
@@ -145,12 +195,12 @@ msgstr "Livre ou Zine"
 #. module: philmer_books
 #: view:website:philmer_books.qweb_philmer_book_catalog
 msgid "Book's Catalog"
-msgstr "Catalogue des livres"
+msgstr "Catalogue de livres"
 
 #. module: philmer_books
 #: model:ir.actions.act_window,name:philmer_books.philmer_book_serie_action
 msgid "Book's Series"
-msgstr "Séries de Livres"
+msgstr "Séries de livres"
 
 #. module: philmer_books
 #: model:ir.actions.act_window,name:philmer_books.philmer_book_category_action
@@ -161,7 +211,7 @@ msgstr "Catégories de Livres"
 #. module: philmer_books
 #: model:ir.ui.menu,name:philmer_books.philmer_book_serie_menu
 msgid "Book's series"
-msgstr "Séries de Livres"
+msgstr "Séries de livre"
 
 #. module: philmer_books
 #: model:ir.actions.act_window,name:philmer_books.philmer_book_book_action
@@ -206,6 +256,11 @@ msgid "Borrower"
 msgstr "Emprunteur"
 
 #. module: philmer_books
+#: view:wizard_aggregate_authors:philmer_books.aggregate_authors_wizard_main_form
+msgid "Cancel"
+msgstr "Annule"
+
+#. module: philmer_books
 #: model:ir.actions.report.xml,name:philmer_books.report_philmer_book_catalog
 msgid "Catalog"
 msgstr "Catalogue"
@@ -230,7 +285,7 @@ msgstr "Catégorie :"
 #. module: philmer_books
 #: model:ir.model,name:philmer_books.model_philmer_book_category
 msgid "Category of books, in an hierarchical way, to permit \"Litterature / Science Fiction / Hard Science\" as category"
-msgstr "Catégorie de livres, sous format hiérachique, pour permettre d'avoir une catégorie de type \"Littérature / Science-fiction / Science pure\"."
+msgstr "Catégorie de livres, avec hiérarchie, pour permettre d'avoir 'Science-fiction / Hard science' comme catégorie."
 
 #. module: philmer_books
 #: view:res.partner:philmer_books.view_editor_form
@@ -243,9 +298,19 @@ msgid "Classification"
 msgstr "Rangement"
 
 #. module: philmer_books
+#: view:website:philmer_books.qweb_philmer_book_catalog
+msgid "Classification :"
+msgstr "Rangement :"
+
+#. module: philmer_books
 #: field:philmer.book,collection:0
 msgid "Collection"
 msgstr "Collection"
+
+#. module: philmer_books
+#: view:website:philmer_books.qweb_philmer_book_catalog
+msgid "Collection :"
+msgstr "Collection :"
 
 #. module: philmer_books
 #: view:res.partner:philmer_books.view_editor_form
@@ -272,12 +337,12 @@ msgstr "Pays"
 #. module: philmer_books
 #: selection:philmer.book.participation,participation_type:0
 msgid "Cover Illustrator"
-msgstr "Illustrateur de la couverture"
+msgstr "Illustrateur couverture"
 
 #. module: philmer_books
 #: model:ir.actions.act_window,help:philmer_books.action_reader
 msgid "Create and manage readers of the books."
-msgstr "Crée et gère les lecteurs des livres."
+msgstr "Créer et gérer les lecteurs des livres"
 
 #. module: philmer_books
 #: field:philmer.author,create_uid:0
@@ -288,6 +353,7 @@ msgstr "Crée et gère les lecteurs des livres."
 #: field:philmer.book.serie,create_uid:0
 #: field:philmer.book.tag,create_uid:0
 #: field:philmer.reading,create_uid:0
+#: field:wizard_aggregate_authors,create_uid:0
 msgid "Created by"
 msgstr "Créé par"
 
@@ -300,6 +366,7 @@ msgstr "Créé par"
 #: field:philmer.book.serie,create_date:0
 #: field:philmer.book.tag,create_date:0
 #: field:philmer.reading,create_date:0
+#: field:wizard_aggregate_authors,create_date:0
 msgid "Created on"
 msgstr "Créé le"
 
@@ -321,6 +388,11 @@ msgid "Description"
 msgstr "Description"
 
 #. module: philmer_books
+#: view:website:philmer_books.qweb_philmer_book_catalog
+msgid "Description :"
+msgstr "Description :"
+
+#. module: philmer_books
 #: field:philmer.book,description:0
 msgid "Description/Back"
 msgstr "Description/Dos"
@@ -334,6 +406,7 @@ msgstr "Description/Dos"
 #: field:philmer.book.serie,display_name:0
 #: field:philmer.book.tag,display_name:0
 #: field:philmer.reading,display_name:0
+#: field:wizard_aggregate_authors,display_name:0
 msgid "Display Name"
 msgstr "Nom affiché"
 
@@ -342,6 +415,11 @@ msgstr "Nom affiché"
 #: view:res.partner:philmer_books.view_editor_form
 msgid "Editor"
 msgstr "Editeur"
+
+#. module: philmer_books
+#: view:website:philmer_books.qweb_philmer_book_catalog
+msgid "Editor :"
+msgstr "Editeur :"
 
 #. module: philmer_books
 #: model:ir.actions.act_window,name:philmer_books.action_editor_form
@@ -354,7 +432,7 @@ msgstr "Editeurs"
 #. module: philmer_books
 #: view:res.users:philmer_books.view_reader_form
 msgid "Email Address"
-msgstr "Adresse électronique"
+msgstr "Adresse courriel"
 
 #. module: philmer_books
 #: field:philmer.author,first_name:0
@@ -364,7 +442,7 @@ msgstr "Prénom"
 #. module: philmer_books
 #: field:philmer.book,first_page:0
 msgid "First Page"
-msgstr "Première Page"
+msgstr "Première page"
 
 #. module: philmer_books
 #: field:philmer.book,book_format:0
@@ -379,7 +457,7 @@ msgstr "Format :"
 #. module: philmer_books
 #: help:philmer.book.reading,reading_date:0
 msgid "Format : YYYY-MM-DD; Date can be partial : YYYY or YYYY-MM"
-msgstr "Format : AAAA-MM-JJ; La date peut être partielle : AAAA or AAAA-MM"
+msgstr "Format : AAAA-MM-JJ; la date peut être partielle : AAAA ou AAAA-MM"
 
 #. module: philmer_books
 #: view:res.partner:philmer_books.view_editor_filter
@@ -395,6 +473,7 @@ msgstr "Regrouper par"
 #: field:philmer.book.serie,id:0
 #: field:philmer.book.tag,id:0
 #: field:philmer.reading,id:0
+#: field:wizard_aggregate_authors,id:0
 msgid "ID"
 msgstr "ID"
 
@@ -404,19 +483,39 @@ msgid "ISBN"
 msgstr "ISBN"
 
 #. module: philmer_books
+#: view:website:philmer_books.qweb_philmer_book_catalog
+msgid "ISBN :"
+msgstr "ISBN :"
+
+#. module: philmer_books
 #: selection:philmer.book.participation,participation_type:0
 msgid "Inner illustrator"
-msgstr "Illustrateur intérieur"
+msgstr "Dessinateur"
+
+#. module: philmer_books
+#: view:website:philmer_books.qweb_philmer_book_catalog
+msgid "Inside :"
+msgstr "Repris dans :"
 
 #. module: philmer_books
 #: view:res.partner:philmer_books.view_editor_form
 msgid "Is a Company?"
-msgstr "Est une société ?"
+msgstr "Est une société?"
+
+#. module: philmer_books
+#: field:wizard_aggregate_authors,kept_author_id:0
+msgid "Kept Author"
+msgstr "Auteur conservé"
 
 #. module: philmer_books
 #: field:philmer.book,language_id:0
 msgid "Language"
 msgstr "Langue"
+
+#. module: philmer_books
+#: view:website:philmer_books.qweb_philmer_book_catalog
+msgid "Langue :"
+msgstr "Langue :"
 
 #. module: philmer_books
 #: field:philmer.author,__last_update:0
@@ -427,8 +526,9 @@ msgstr "Langue"
 #: field:philmer.book.serie,__last_update:0
 #: field:philmer.book.tag,__last_update:0
 #: field:philmer.reading,__last_update:0
+#: field:wizard_aggregate_authors,__last_update:0
 msgid "Last Modified on"
-msgstr "Modifié en dernier le"
+msgstr "Dernière modif le"
 
 #. module: philmer_books
 #: field:philmer.author,last_name:0
@@ -444,8 +544,9 @@ msgstr "Nom"
 #: field:philmer.book.serie,write_uid:0
 #: field:philmer.book.tag,write_uid:0
 #: field:philmer.reading,write_uid:0
+#: field:wizard_aggregate_authors,write_uid:0
 msgid "Last Updated by"
-msgstr "Dernière mise à jour par"
+msgstr "Dernière modif par"
 
 #. module: philmer_books
 #: field:philmer.author,write_date:0
@@ -456,18 +557,19 @@ msgstr "Dernière mise à jour par"
 #: field:philmer.book.serie,write_date:0
 #: field:philmer.book.tag,write_date:0
 #: field:philmer.reading,write_date:0
+#: field:wizard_aggregate_authors,write_date:0
 msgid "Last Updated on"
-msgstr "Dernière mise à jour le"
+msgstr "Dernière modif le"
 
 #. module: philmer_books
 #: help:philmer.reading,date:0
 msgid "Leave it empty if current reading"
-msgstr "Laissez le vide si la lectuire est en cours"
+msgstr "Laissez vide si la lecteure est en cours"
 
 #. module: philmer_books
 #: model:ir.model,name:philmer_books.model_philmer_book_participation
 msgid "Link between Book and Author with the type of link"
-msgstr "Lien entre un livre et un auteur, avec le type de lien"
+msgstr "Lien entre un livre et un auteur avec le type de lien"
 
 #. module: philmer_books
 #: selection:philmer.book,book_type:0
@@ -477,12 +579,12 @@ msgstr "Magazine"
 #. module: philmer_books
 #: selection:philmer.book,book_type:0
 msgid "Magazine Issue"
-msgstr "Parution de Magazine"
+msgstr "Parution de magazine"
 
 #. module: philmer_books
 #: model:ir.model,name:philmer_books.model_philmer_reading
 msgid "Mark the reading of a book by a user"
-msgstr "Enregistre la lecture d'un livre par un utilisateur"
+msgstr "Enregistre la lecteure d'un livre par un lecteur"
 
 #. module: philmer_books
 #: field:philmer.author,name:0
@@ -504,7 +606,7 @@ msgstr "Note"
 #. module: philmer_books
 #: help:philmer.reading,note:0
 msgid "Note about this bbok by this user"
-msgstr "Note à propos de ce livre par cet utilisateur"
+msgstr "Note à propos de ce livre par ce lecteur"
 
 #. module: philmer_books
 #: selection:philmer.book,book_type:0
@@ -517,14 +619,36 @@ msgid "Number"
 msgstr "Numéro"
 
 #. module: philmer_books
+#: view:website:philmer_books.qweb_philmer_book_catalog
+msgid "Number :"
+msgstr "Numéro :"
+
+#. module: philmer_books
 #: help:philmer.book,number:0
 msgid "Number in the serie, or magazine number"
 msgstr "Numéro dans la série ou numéro du magazine"
 
 #. module: philmer_books
+#: view:website:philmer_books.qweb_philmer_book_catalog
+msgid "Number of pages :"
+msgstr "Nombre de pages :"
+
+#. module: philmer_books
+#: code:addons/philmer_books/models/philmer_books.py:68
+#, python-format
+msgid "Only ISBN 13 digits are allowed : %s is not correct."
+msgstr "Seuls les ISBN de 13 chiffres sont permis : %s n'est pas correct."
+
+#. module: philmer_books
+#: code:addons/philmer_books/models/philmer_books.py:71
+#, python-format
+msgid "Only digits are allowed in ISBN 13 digits : %s is not correct."
+msgstr "Les ISBN a 13 chiffres n'acceptent que des chiffres : %s n'est pas correct."
+
+#. module: philmer_books
 #: help:philmer.book,sub_name:0
 msgid "Optional Sub Name"
-msgstr "Sous titre optionnel"
+msgstr "Sous-titre optionnel"
 
 #. module: philmer_books
 #: field:philmer.book,original_name:0
@@ -550,7 +674,7 @@ msgstr "Catégorie parente"
 #. module: philmer_books
 #: field:philmer.book,parent_id:0
 msgid "Parent id"
-msgstr "Parent"
+msgstr "Parent ID"
 
 #. module: philmer_books
 #: field:philmer.book.category,parent_left:0
@@ -560,17 +684,17 @@ msgstr "Parent gauche"
 #. module: philmer_books
 #: field:philmer.book.category,parent_right:0
 msgid "Parent right"
-msgstr "Parent droite"
-
-#. module: philmer_books
-#: field:philmer.book.participation,participation_type:0
-msgid "Participation type"
-msgstr "Type de Participation"
+msgstr "Parent droit"
 
 #. module: philmer_books
 #: field:philmer.book,parution_date:0
 msgid "Parution"
-msgstr "Parution"
+msgstr "Date de Parution"
+
+#. module: philmer_books
+#: view:website:philmer_books.qweb_philmer_book_catalog
+msgid "Parution Date :"
+msgstr "Date de parution :"
 
 #. module: philmer_books
 #: selection:philmer.book.participation,participation_type:0
@@ -599,7 +723,7 @@ msgstr "Lecteurs"
 #: view:philmer.book.reading:philmer_books.philmer_author_tree
 #: view:philmer.book.reading:philmer_books.philmer_book_reading_form
 msgid "Reading of book"
-msgstr "Lecture d'un livre"
+msgstr "Lectures de livre"
 
 #. module: philmer_books
 #: model:ir.actions.act_window,name:philmer_books.philmer_book_reading_action
@@ -612,7 +736,7 @@ msgstr "Lectures"
 #. module: philmer_books
 #: model:ir.model,name:philmer_books.model_philmer_book_reading
 msgid "Record the reading of a book by a user"
-msgstr "Enregistre la lecture d'un livre par un utilisateur"
+msgstr "Enregistre la lecture d'un livre par un lecteur"
 
 #. module: philmer_books
 #: model:ir.ui.menu,name:philmer_books.philmer_book_report_menu
@@ -632,17 +756,22 @@ msgstr "Editeur de recherche"
 #. module: philmer_books
 #: field:philmer.book.serie,name:0
 msgid "Serie Name"
-msgstr "Nom de la Série"
+msgstr "Nom de la série"
 
 #. module: philmer_books
 #: model:ir.model,name:philmer_books.model_philmer_book_serie
 msgid "Serie of books; Cycle of books"
-msgstr "Série ou cycle de livres"
+msgstr "Série de livres; cycle de livres"
 
 #. module: philmer_books
 #: field:philmer.book,serie_id:0
 msgid "Serie/Cycle"
 msgstr "Série/Cycle"
+
+#. module: philmer_books
+#: view:website:philmer_books.qweb_philmer_book_catalog
+msgid "Serie/Cycle :"
+msgstr "Série/Cycle :"
 
 #. module: philmer_books
 #: view:philmer.book.serie:philmer_books.philmer_book_serie_form
@@ -668,7 +797,7 @@ msgstr "Rue..."
 #. module: philmer_books
 #: field:philmer.book,sub_name:0
 msgid "Sub Name"
-msgstr "Sous-titre"
+msgstr "Sous-Titre"
 
 #. module: philmer_books
 #: field:philmer.book.category,child_ids:0
@@ -678,7 +807,7 @@ msgstr "Catégories filles"
 #. module: philmer_books
 #: view:philmer.book.tag:philmer_books.philmer_book_tag_form
 msgid "Tag"
-msgstr "Etiquette"
+msgstr "Etiquettes"
 
 #. module: philmer_books
 #: model:ir.actions.act_window,name:philmer_books.philmer_tag_action
@@ -688,7 +817,30 @@ msgid "Tags"
 msgstr "Etiquettes"
 
 #. module: philmer_books
+#: view:website:philmer_books.qweb_philmer_book_catalog
+msgid "Tags :"
+msgstr "Etiquettes :"
+
+#. module: philmer_books
+#: code:addons/philmer_books/models/philmer_books.py:74
+#, python-format
+msgid "The ISBN numbers MUST begin with 978 or 979 : %s is not correct."
+msgstr "L'ISBN doit débuter par 978 ou 979 : %s n'est donc pas correct."
+
+#. module: philmer_books
+#: help:wizard_aggregate_authors,aggregated_author_id:0
+msgid "The books of this author will be transfered to the current author"
+msgstr "Les livres de cet auteur seront transférés sur l'auteur actuel."
+
+#. module: philmer_books
+#: code:addons/philmer_books/models/philmer_books.py:86
+#, python-format
+msgid "The check digit of %s is not correct : %s is different from the good value of %s [%s]."
+msgstr "Le check digit de %s n'est pas correct : %s est différent de la bonne valeur de %s [%s]."
+
+#. module: philmer_books
 #: field:philmer.book,book_type:0
+#: field:philmer.book.participation,participation_type:0
 msgid "Type"
 msgstr "Type"
 
@@ -700,7 +852,7 @@ msgstr "Type :"
 #. module: philmer_books
 #: view:philmer.book:philmer_books.philmer_book_form
 msgid "Under title"
-msgstr "Sous-titre"
+msgstr "Sous-Titre"
 
 #. module: philmer_books
 #: field:philmer.book.reading,user_name:0
@@ -711,12 +863,12 @@ msgstr "Lecteur et date"
 #: field:philmer.book.reading,user_id:0
 #: field:philmer.reading,user_id:0
 msgid "User id"
-msgstr "Lecteur"
+msgstr "Lecteur ID"
 
 #. module: philmer_books
 #: view:res.users:philmer_books.view_reader_form
 msgid "You are creating a new user. After saving, the user will receive an invite email containing a link to set its password."
-msgstr "Vous êtes en train de créer un nouvel utilisateur. Après son enregistrement, l'utilisateur recevra un courriel contenant un lien pour l'inviter à définir son mot de passe."
+msgstr "Vous êtes en train de créer un nouvel utilisateur. Une fois enregistré, il recevra un email d'invitation contenant un lien pour activer son mot de passe."
 
 #. module: philmer_books
 #: view:res.partner:philmer_books.view_editor_form
@@ -736,7 +888,7 @@ msgstr "p.e. Editeur"
 #. module: philmer_books
 #: view:res.partner:philmer_books.view_editor_form
 msgid "e.g. www.odoo.com"
-msgstr "ex : www.odoo.com"
+msgstr "p.e. www.soft-ethnic.be"
 
 #. module: philmer_books
 #: selection:philmer.book,book_format:0
@@ -751,5 +903,10 @@ msgstr "eBook et imprimé"
 #. module: philmer_books
 #: view:res.users:philmer_books.view_reader_form
 msgid "email@yourcompany.com"
-msgstr " email@yourcompany.com"
+msgstr "email@yourcompany.com"
+
+#. module: philmer_books
+#: view:wizard_aggregate_authors:philmer_books.aggregate_authors_wizard_main_form
+msgid "or"
+msgstr "ou"
 
